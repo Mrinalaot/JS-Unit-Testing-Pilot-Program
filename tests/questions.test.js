@@ -30,7 +30,7 @@ describe('Questions', () => {
         chai.expect(q.getHardQuestion()).to.be.null;
     });
 
-    it('should Create couple of tests for the method getQuestion with inputs easy and hard', () => {
+    it('should Create couple of tests for the method getQuestion with inputs hard', () => {
         let q = new Questions();
         const mockHardData = {
             q: 'Dummy Hard Question',
@@ -38,6 +38,24 @@ describe('Questions', () => {
         };
         const stub = sinon.stub(q, 'getHardQuestion').returns(mockHardData);
         chai.expect(q.getQuestion('hard')).to.deep.include(mockHardData);
+        chai.expect(stub.calledOnce).to.be.true;
+    });
+
+    it('should Create couple of tests for the method getQuestion with inputs easy ', () => {
+        let q = new Questions();
+        const mockEasyData = {
+            q: 'Dummy Soft Question',
+            a: 'Dummy Soft Answer'
+        };
+        const stub = sinon.stub(q, 'getEasyQuestion').returns(mockEasyData);
+        chai.expect(q.getQuestion('easy')).to.deep.include(mockEasyData);
+        chai.expect(stub.calledOnce).to.be.true;
+    });
+
+    it('should Create couple of tests for the method getQuestion with deafult inputs ', () => {
+        let q = new Questions();
+        const stub = sinon.stub(q, 'getEasyQuestion').returns(mockEasyData);
+        chai.expect(q.getQuestion()).to.deep.include(mockEasyData);
         chai.expect(stub.calledOnce).to.be.true;
     });
 
