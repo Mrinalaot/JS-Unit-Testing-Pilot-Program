@@ -8,7 +8,7 @@ module.exports = function rockPaperScissors(player1, player2) {
     if (player1 === 'paper' && player2 === 'scissors') {
         return 2; // Player 2 wins!
     }
-    if (player1 === 'scissors' && player2 === 'rock ') {
+    if (player1 === 'scissors' && player2 === 'rock') {
         return 2; // Player 2 wins!
     }
     return 1; // Player 1 wins!

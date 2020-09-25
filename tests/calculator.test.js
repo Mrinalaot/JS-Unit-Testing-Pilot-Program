@@ -1,7 +1,7 @@
 "use strict";
 
 const calculator = require('../src/calculator');
-var chai = require('chai');
+const chai = require('chai');
 
 const spies = require('chai-spies');
 

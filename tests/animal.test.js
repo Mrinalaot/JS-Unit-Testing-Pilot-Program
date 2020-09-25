@@ -1,9 +1,5 @@
 const Animal = require('../src/animal');
-var chai = require('chai');
-
-const spies = require('chai-spies');
-
-chai.use(spies);
+const chai = require('chai');
 
 describe('Animal', () => {
     it('should have working instance', () => {

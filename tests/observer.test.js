@@ -1,7 +1,7 @@
 "use strict";
 
 const Observer = require('../src/observer');
-var chai = require('chai');
+const chai = require('chai');
 
 const spies = require('chai-spies');
 

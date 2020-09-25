@@ -1,7 +1,7 @@
 const Questions = require('../src/questions');
 const chai = require('chai');
 const spies = require('chai-spies');
-var sinon = require('sinon');
+const sinon = require('sinon');
 chai.use(spies);
 
 describe('Questions', () => {
@@ -54,6 +54,10 @@ describe('Questions', () => {
 
     it('should Create couple of tests for the method getQuestion with deafult inputs ', () => {
         let q = new Questions();
+        const mockEasyData = {
+            q: 'Dummy Soft Question',
+            a: 'Dummy Soft Answer'
+        };
         const stub = sinon.stub(q, 'getEasyQuestion').returns(mockEasyData);
         chai.expect(q.getQuestion()).to.deep.include(mockEasyData);
         chai.expect(stub.calledOnce).to.be.true;
